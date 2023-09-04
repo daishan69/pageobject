@@ -1,18 +1,18 @@
-package ru.netology.web;
+package ru.netology.web.page;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import ru.netology.web.DataHelper.CardInfo;
+import ru.netology.web.data.DataHelper;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class DashboardPage {
-    private final String balanceStart = ", баланс: ";
-    private final String balanceFinish = " р. ";
-    private final SelenideElement heading = $("[data-test-id=dashboard]");
     private final ElementsCollection cards = $$(".list__item div");
+    private final String balanceStart = "баланс: ";
+    private final String balanceFinish = " р.";
+    private final SelenideElement heading = $("[data-test-id=dashboard]");
 
     public DashboardPage(){
         heading.shouldBe(visible);
